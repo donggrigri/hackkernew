@@ -34,38 +34,6 @@ window.addEventListener('load',function(){
         //이 배열값을 가지고 아이디값을 토대로 또 요청하여 main부에 뿌린다.
         topstoryMake(jsonobj);
     });
-
-   
-
-    fetch("https://hacker-news.firebaseio.com/v0/askstories.json")
-    .then(function(res){
-        if(res.ok){
-            return res.json();
-        }else{
-            throw new Error("통신불가!");
-        }
-    })
-    .then(function(json){
-        askstory=json;
-    });
-
-    
-
-    fetch("https://hacker-news.firebaseio.com/v0/jobstories.json")
-    .then(function(res){
-        if(res.ok){
-            return res.json();
-        }else{
-            throw new Error("통신불가!");
-        }
-    })
-    .then(function(json){
-        jobstory=json;
-    });
-    let hacker = document.getElementsByClassName("hacker");
-    hacker[0].addEventListener('click',function(){
-        location.reload();
-    });
 });
 
 function Moreclick(){
